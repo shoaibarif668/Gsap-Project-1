@@ -1,0 +1,165 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gsap Project</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="btn-app">
+        <button>Launch App</button>
+    </div>
+    
+
+    <div class="overlay">
+        <a href="#" class="exit"><img src="./images/close.png" alt="Exit Navigation"></a>
+
+        <div class="menu">
+            <div class="menu-container">
+                <p class="category">Category</p>
+
+                <ul>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                </ul>
+            </div>
+            <div class="menu-container">
+                <p class="category">Category</p>
+
+                <ul>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                </ul>
+            </div>
+            <div class="menu-container">
+                <p class="category">Category</p>
+
+                <ul>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                </ul>
+            </div>
+            <div class="menu-container">
+                <p class="category">Category</p>
+
+                <ul>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                </ul>
+            </div>
+            <div class="menu-container">
+                <p class="category">Category</p>
+
+                <ul>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                </ul>
+            </div>
+            <div class="menu-container">
+                <p class="category">Category</p>
+
+                <ul>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                </ul>
+            </div>
+            <div class="menu-container">
+                <p class="category">Category</p>
+
+                <ul>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                </ul>
+            </div>
+            <div class="menu-container">
+                <p class="category">Category</p>
+
+                <ul>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                </ul>
+            </div>
+            <div class="menu-container">
+                <p class="category">Category</p>
+
+                <ul>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                </ul>
+            </div>
+            <div class="menu-container">
+                <p class="category">Category</p>
+
+                <ul>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                    <li><a href="#">A link can go here</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+
+    <script>
+        const button= document.querySelector('button');
+        const overlay= document.querySelector('.overlay');
+        const exit= document.querySelector('.exit');
+
+        let tl=gsap.timeline({
+            defaults:{
+                duration:1.5,
+                ease: Back.easeOut.config(2)
+            }
+        })
+
+        tl.paused(true);
+        tl.to(overlay,{
+            clipPath:'circle(100%)'
+        })
+        .to('.menu-container',{
+            opacity:1,
+            y:'30px',
+            stagger:0.1 
+        },"-=1")
+
+        button.addEventListener('click',()=>{
+            tl.play();
+        })
+        exit.addEventListener('click',()=>{
+            tl.reverse(0.7); //It will start from 0.7 animation
+        })
+    </script>
+</body>
+</html>
